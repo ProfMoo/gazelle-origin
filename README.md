@@ -1,6 +1,8 @@
 gazelle-origin
 ==============
 
+**NOTE: This project was originally created by x1ppy [here](https://github.com/x1ppy/gazelle-origin). However, it seems to have been abandoned, as new PRs aren't being reviewed/accepted. I forked the project so I could add Orpheus support based on vitiko98's work [here](https://github.com/x1ppy/gazelle-origin/pull/3).**
+
 `gazelle-origin` is a script that fetches and saves YAML torrent origin information from Gazelle-based music trackers.
 
 Example output from `gazelle-origin`:
@@ -269,38 +271,3 @@ originquery:
         albumdisambig: '$.Edition'
 ~~~
 
-Changelog
----------
-### [2.2.1] - 2020-11-16
-* Fix URL queries
-### [2.2.0] - 2020-11-02
-* Add support for multiple inputs, files/directories, env file, and post scripts (thanks @a8f!)
-### [2.1.1] - 2020-04-27
-* Accept any string containing "flacsfor.me" as RED tracker ID
-### [2.1.0] - 2020-04-27
-* Added `--api-key` to allow specifying API key on execution
-* Accept "flacsfor.me" as a RED tracker ID
-* More sane package organization
-### [2.0.4] - 2020-04-18
-* Fixed YAML generation for comments containing whitespace-only lines
-### [2.0.3] - 2020-04-13
-* Replaced cookie with API key
-### [2.0.2] - 2020-04-11
-* Added timeout for requests
-### [2.0.1] - 2020-04-10
-* Fixed YAML generation bug for fields starting with quotes
-### [2.0.0] - 2020-04-08
-* Renamed to `gazelle-origin` and switched to YAML output
-### [1.0.0] - 2020-03-24
-* First tagged release
-
-[2.2.1]: https://github.com/x1ppy/gazelle-origin/compare/2.2.0...2.2.1
-[2.2.0]: https://github.com/x1ppy/gazelle-origin/compare/2.1.1...2.2.0
-[2.1.1]: https://github.com/x1ppy/gazelle-origin/compare/2.1.0...2.1.1
-[2.1.0]: https://github.com/x1ppy/gazelle-origin/compare/2.0.4...2.1.0
-[2.0.4]: https://github.com/x1ppy/gazelle-origin/compare/2.0.3...2.0.4
-[2.0.3]: https://github.com/x1ppy/gazelle-origin/compare/2.0.2...2.0.3
-[2.0.2]: https://github.com/x1ppy/gazelle-origin/compare/2.0.1...2.0.2
-[2.0.1]: https://github.com/x1ppy/gazelle-origin/compare/2.0.0...2.0.1
-[2.0.0]: https://github.com/x1ppy/gazelle-origin/compare/1.0.0...2.0.0
-[1.0.0]: https://github.com/x1ppy/gazelle-origin/releases/tag/1.0.0
