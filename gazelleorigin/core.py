@@ -30,7 +30,7 @@ class GazelleAPIError(Exception):
 # GazelleAPI code is based off of REDbetter (https://github.com/Mechazawa/REDBetter-crawler).
 class GazelleAPI:
     def __init__(self, api_key):
-        self.base = "https://redacted.ch"
+        self.base = "https://redacted.sh"
         self.session = requests.Session()
         self.session.headers.update(headers)
         self.session.headers.update({"Authorization": api_key})
@@ -56,14 +56,14 @@ class GazelleAPI:
                     r.status_code
                 ),
             )
-        
+
         parsed = json.loads(r.content)
         if parsed["status"] != "success":
             raise GazelleAPIError(
                 "request-json",
                 "Could not retrieve origin data. Check the torrent ID/hash or try again later.",
             )
-        
+
         return parsed["response"]
 
     @staticmethod

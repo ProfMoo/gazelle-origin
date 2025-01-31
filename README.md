@@ -24,7 +24,7 @@ Size:           219114079
 File count:     12
 Info hash:      C380B62A3EC6658597C56F45D596E8081B3F7A5C
 Uploaded:       2016-11-24 01:34:03
-Permalink:      https://redacted.ch/torrents.php?torrentid=1
+Permalink:      https://redacted.sh/torrents.php?torrentid=1
 
 Comment: |-
   [important]Staff: Technically trumped because EAC 0.95 logs are terrible. There is historic and sentimental value in keeping the first torrent ever uploaded to the site as well as a perfect modern rip. Take no action.[/important]
@@ -60,9 +60,10 @@ Motivation
 ----------
 
 Having origin information locally available for each downloaded torrent has a number of benefits:
-  * music can be retagged and renamed without losing immediate access to original metadata,
-  * if the tracker is ever down or goes away, the origin information is still available, and
-  * origin information can be passed to other scripts/tools (e.g., beets) to more accurately identify your music (see
+
+* music can be retagged and renamed without losing immediate access to original metadata,
+* if the tracker is ever down or goes away, the origin information is still available, and
+* origin information can be passed to other scripts/tools (e.g., beets) to more accurately identify your music (see
     [beets integration](#beets)).
 
 While some uploaders helpfully include this information in their uploads, this
@@ -74,8 +75,9 @@ Supported Trackers
 ------------------
 
 Currently, the following trackers are supported:
-  * redacted.ch: use `--tracker red` or set the `ORIGIN_TRACKER=red`
-  * orpheus.network: use `--tracker ops` or set the `ORIGIN_TRACKER=ops`
+
+* redacted.sh: use `--tracker red` or set the `ORIGIN_TRACKER=red`
+* orpheus.network: use `--tracker ops` or set the `ORIGIN_TRACKER=ops`
 
 Installation
 ------------
@@ -101,9 +103,11 @@ Finally, see [Integration](#torrent-clients) for calling `gazelle-origin` automa
 
 Obtaining Your API Key
 ---------------------
+
 `gazelle-origin` requires an API key or a session cookie to make API requests. To obtain your API key:
 
-### redacted.ch
+### redacted.sh
+
 * Go to your profile and select Access Settings on the right side
 * Scroll down to API Keys
 * Enter "gazelle-origin" as the name
@@ -169,7 +173,7 @@ Examples
 --------
 
 These examples all assume you have the `ORIGIN_TRACKER` environment variable set as described in
-[Installation](#Installation). If you don't, or if you want to use a different tracker, include the `--tracker` flag in
+[Installation](#installation). If you don't, or if you want to use a different tracker, include the `--tracker` flag in
 the following commands.
 
 To show origin information for a given torrent using its info hash:
@@ -178,7 +182,7 @@ To show origin information for a given torrent using its info hash:
 
 Alternatively, you can pass the permalink instead of the info hash:
 
-    $> gazelle-origin "https://redacted.ch/torrents.php?torrentid=1"
+    $> gazelle-origin "https://redacted.sh/torrents.php?torrentid=1"
 
 You can even supply just the torrent ID:
 
@@ -210,9 +214,9 @@ then you could run
 Or you can manually go through your existing downloads and populate them with origin.yaml files:
 
     $> cd /path/to/first/torrent
-    $> gazelle-origin -o origin.yaml "https://redacted.ch/torrents.php?torrentid=1"
+    $> gazelle-origin -o origin.yaml "https://redacted.sh/torrents.php?torrentid=1"
     $> cd /path/to/another/torrent
-    $> gazelle-origin -o origin.yaml "https://redacted.ch/torrents.php?torrentid=2"
+    $> gazelle-origin -o origin.yaml "https://redacted.sh/torrents.php?torrentid=2"
     $> ...
 
 Integration
@@ -234,6 +238,7 @@ method.set_key = event.download.finished,postrun,"execute2={sh,~/postdownload.sh
 ~~~
 
 Then, in `~/postdownload.sh`:
+
 ~~~
 export RED_API_KEY=<api_key>
 
@@ -270,4 +275,3 @@ originquery:
         catalognum: '$."Catalog number"'
         albumdisambig: '$.Edition'
 ~~~
-
